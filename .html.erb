@@ -9,13 +9,12 @@
     <% connection= PG::connect(dbname: "goya") %>
     <% connection.internal_encoding = "UTF-8" %>
 
-    <% result = connection.exec("SELECT * FROM crops WHERE NOT(give_for='自家消費') AND quality=false;") %>
+    <% result = connection.exec("select * from crops where not(give_for='自家消費') AND quality=false;") %>
     <%data = [] %>
 
     <% result.each do |record| %>
-      <% data << "ゴーヤの譲渡先: #{record["give_for"]}" %>
-      <%data << "品質: #{record["quality"]}" %>
-    <% end %>
+      <% data << "ゴーヤの譲渡先: #{record["give_for"]}", "品質: #{record["quality"]}" %>
+    <%end%>
 
     <form action="goya.cgi" method="POST">
       下記のボタンを押すと、譲渡先が自家消費ではないもののgoyaの情報ページに飛びます<br><br>
