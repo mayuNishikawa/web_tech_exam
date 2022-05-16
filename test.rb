@@ -11,5 +11,5 @@ server.mount('/', WEBrick::HTTPServlet::ERBHandler, '.html.erb')
 server.mount('/test', WEBrick::HTTPServlet::ERBHandler, 'test.html.erb')
 server.mount('/indicate.cgi', WEBrick::HTTPServlet::CGIHandler, 'indicate.rb')
 server.mount('/goya.cgi', WEBrick::HTTPServlet::CGIHandler, 'goya.rb')
-server.mount('/goya2.cgi', WEBrick::HTTPServlet::CGIHandler,'goya2.rb')
+server.mount('/goya2.cgi', WEBrick::HTTPServlet::CGIHandler, 'goya2.rb')
 server.start

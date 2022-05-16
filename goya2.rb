@@ -2,7 +2,7 @@ require 'cgi'
 
  cgi = CGI.new
  cgi.out("type" => "text/html", "charset" => "UTF-8") {
-  get = cgi['goya']
+  get = cgi['goya2']
 
   "<html>
     <body>
@@ -11,3 +11,4 @@ require 'cgi'
     </body>
   </html>"
 }
+
