@@ -7,9 +7,10 @@ begin
   result.each do |record|
     puts "ゴーヤの大きさ:#{record["weight"]} 売った相手:#{record["give_for"]}"
   end
-  result = connection.exec("select * from crops where not(give_for='自家消費') AND quality=false;")
+  result = connection.exec("select * from crops where give_for!='自家消費' AND quality=false;")
   result.each do |record|
-    puts "譲渡先:#{record["give_for"]} 品質:#{record["quality"]}"
+    puts "譲渡先:#{record["give_for"]}"
+    puts "品質:#{record["quality"]}"
   end
 ensure
   connection.finish
